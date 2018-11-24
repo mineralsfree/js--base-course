@@ -122,6 +122,57 @@ function isDeepEqual(objA, objB) {
     }
     return true;
 }
-
+function vector(nice) {
+    retarr = new Array();
+    var lol = 0;
+    h = nice.length;
+    var length = nice[0].length;
+    for (let i = 0; i < length; i++) {
+        retarr[lol] = nice[0][i];
+        lol++;
+    }
+    for (let i = 1; i < nice.length; i++) {
+        retarr[lol] = nice[i][length - 1]
+        lol++;
+    }
+    return retarr;
+}
+/**
+ * Написать функцию `spiral` 
+ * которая принимает на вход двумерный массив и возвращает 
+ * одномерный массив с элементами расположенными по спирали.
+ * Матрица не обязательно имеет одинаковые размеры по обеим сторонам:
+ * @param {*} kek
+ * @return {*} outarr одномерный массив обхода
+ */
+function spiral(kek) {
+    var outarr = new Array();
+    while (kek.length !== 0) {
+        outarr = outarr.concat(vector(kek));
+        kek = matrixReverse(kek);
+    }
+    console.log(outarr);
+    return outarr;
+}
+/**
+ * Написать функцию 'quadraticEquation' 
+ * которая на вход принимает коэффициенты квадратного уравнения, 
+ * а возвращает массив с вещественными корнями этого уравнения (если они есть).
+ * @param {number} a
+ * @param {number} b
+ * @param {number} c
+ * @return {number[]} [*]
+function quadraticEquation(a, b, c) {
+    let D = b * b - 4 * a * c;
+    let x1 = (((-b) + Math.sqrt(D)) / 2 * a);
+    let x2 = (((-b) - Math.sqrt(D)) / 2 * a);
+    if (x1 === x2) {
+        return [x1]
+    }
+    if (isNaN(x1)) {
+        return [];
+    }
+    return [x1, x2];
+}
 
 
