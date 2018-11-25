@@ -162,6 +162,7 @@ function spiral(kek) {
  * @param {number} b
  * @param {number} c
  * @return {number[]} [*]
+*/
 function quadraticEquation(a, b, c) {
     let D = b * b - 4 * a * c;
     let x1 = (((-b) + Math.sqrt(D)) / 2 * a);
